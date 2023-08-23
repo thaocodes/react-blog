@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import Create from "./pages/Create";
+import Details from "./pages/BlogDetails";
 import Home from "./pages/Home";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -20,6 +21,11 @@ function App() {
             </Route>
             <Route path="/create">
               <Create />
+            </Route>
+            {/* `:` syntax for making a route parameter */}
+            {/* `id` is the parameter name we gave it */}
+            <Route path="/blogs/:id">
+              <Details />
             </Route>
           </Switch>
         </div>
