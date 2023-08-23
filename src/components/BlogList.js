@@ -1,3 +1,5 @@
+import { Link } from "reactRouterDom";
+
 // destructuring blogs & title props passed down from `Home`
 const BlogList = ({ blogs, title }) => {
   return (
@@ -5,8 +7,11 @@ const BlogList = ({ blogs, title }) => {
       <h2>{title} </h2>
       {blogs.map((blog) => (
         <div className="blog-preview" key={blog.id}>
-          <h2>{blog.title}</h2>
-          <p>Written by {blog.author}</p>
+          {/* access each blog with map, each blog object has an `id` */}
+          <Link to={`/blogs/${blogs.id}`}>
+            <h2>{blog.title}</h2>
+            <p>Written by {blog.author}</p>
+          </Link>
         </div>
       ))}
     </div>
