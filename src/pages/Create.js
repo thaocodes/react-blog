@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 const Create = () => {
   // states for all input fields to track changing values
@@ -7,6 +8,9 @@ const Create = () => {
   const [author, setAuthor] = useState("thao");
   // loading state for form submission
   const [isLoading, setIsLoading] = useState(false);
+
+  // invoke useHistory hook to redirect user
+  const history = useHistory();
 
   // function that reacts to a submit event (button being clicked)
   const handleSubmit = (e) => {
@@ -30,6 +34,9 @@ const Create = () => {
 
       // once form is submitted, isLoading = false
       setIsLoading(false);
+
+      // after blog is added, redirect user to `Home` page
+      history.push("/"); // use push method on history object
     });
   };
 
