@@ -1,8 +1,9 @@
 import Navbar from "./components/Navbar";
 import Create from "./pages/Create";
-import Details from "./pages/BlogDetails";
 import Home from "./pages/Home";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import BlogDetails from "./pages/BlogDetails";
+import NotFound from "./pages/NotFound";
 
 // a component is a function, we must return something inside it (JSX template)
 // export the component to be used elsewhere
@@ -25,7 +26,11 @@ function App() {
             {/* `:` syntax for making a route parameter */}
             {/* `id` is the parameter name we gave it */}
             <Route path="/blogs/:id">
-              <Details />
+              <BlogDetails />
+            </Route>
+            {/* catch any other route that doesn't match above. MUST GO AT BOTTOM */}
+            <Route path="*">
+              <NotFound />
             </Route>
           </Switch>
         </div>
