@@ -1,4 +1,4 @@
-import { Link } from "reactRouterDom";
+import { Link } from "react-router-dom";
 
 // destructuring blogs & title props passed down from `Home`
 const BlogList = ({ blogs, title }) => {
