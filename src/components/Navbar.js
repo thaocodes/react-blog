@@ -7,11 +7,16 @@ const Navbar = () => {
       <h1>Thao's Blog</h1>
       <div className="links">
         <Link to="/">Home</Link>
-        <Link to="/create">New Blog</Link>
-
-        {/* OLD nav below using anchor tags & href */}
-        {/* <a href="/">Home</a>
-        <a href="/create">New Blog</a> */}
+        <Link
+          to="/create"
+          style={{
+            color: "white",
+            backgroundColor: "#f1356d",
+            borderRadius: "8px",
+          }}
+        >
+          New Blog
+        </Link>
       </div>
     </nav>
   );
