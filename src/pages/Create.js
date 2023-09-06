@@ -22,7 +22,7 @@ const Create = () => {
     setIsLoading(true);
 
     // use fetch API, add second arg to include data & method
-    fetch("http://localhost:8000/blogs", {
+    fetch("http://localhost:8000/blogs/", {
       method: "POST",
       headers: { "Content-Type": "application/json" }, // defines content type being sent
       // body is actual data being sent
